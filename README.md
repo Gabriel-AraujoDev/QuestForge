@@ -31,20 +31,6 @@ O projeto está sendo desenvolvido de forma incremental, adicionando novas funci
 * **JSON**
 * **Git & GitHub**
 
-## 📁 Estrutura
-
-```text
-QuestForge/
-│
-├── data/
-│   ├── jogadores.json
-│   └── missoes.json
-│
-├── script.js
-├── package.json
-└── README.md
-```
-
 ## ▶️ Como executar
 
 Clone o repositório e entre na pasta:

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nome": "Caçador de Goblins",
+        "dificuldade": "facil",
+        "xp": 150,
+        "moedas": 100,
+        "nivelMinimo": 5,
+        "concluida": false,
+        "concluidaPorQualPlayer": null
+    },
+    {
+        "id": 2,
+        "nome": "Templo Perdido",
+        "dificuldade": "media",
+        "xp": 350,
+        "moedas": 250,
+        "nivelMinimo": 10,
+        "concluida": false,
+        "concluidaPorQualPlayer": null
+    },
+    {
+        "id": 3,
+        "nome": "Dragão Ancestral",
+        "dificuldade": "dificil",
+        "xp": 1000,
+        "moedas": 800,
+        "nivelMinimo": 20,
+        "concluida": false,
+        "concluidaPorQualPlayer": null
+    },
+    {
+        "id": 4,
+        "nome": "Torre do Caos",
+        "dificuldade": "extrema",
+        "xp": 2500,
+        "moedas": 2000,
+        "nivelMinimo": 30,
+        "concluida": false,
+        "concluidaPorQualPlayer": null
+    }
+]

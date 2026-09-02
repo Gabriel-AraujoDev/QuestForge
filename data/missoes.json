@@ -5,9 +5,7 @@
         "dificuldade": "facil",
         "xp": 150,
         "moedas": 100,
-        "nivelMinimo": 5,
-        "concluida": false,
-        "concluidaPorQualPlayer": null
+        "nivelMinimo": 5
     },
     {
         "id": 2,
@@ -15,9 +13,7 @@
         "dificuldade": "media",
         "xp": 350,
         "moedas": 250,
-        "nivelMinimo": 10,
-        "concluida": false,
-        "concluidaPorQualPlayer": null
+        "nivelMinimo": 10
     },
     {
         "id": 3,
@@ -25,9 +21,7 @@
         "dificuldade": "dificil",
         "xp": 1000,
         "moedas": 800,
-        "nivelMinimo": 20,
-        "concluida": false,
-        "concluidaPorQualPlayer": null
+        "nivelMinimo": 20
     },
     {
         "id": 4,
@@ -35,8 +29,6 @@
         "dificuldade": "extrema",
         "xp": 2500,
         "moedas": 2000,
-        "nivelMinimo": 30,
-        "concluida": false,
-        "concluidaPorQualPlayer": null
+        "nivelMinimo": 30
     }
 ]

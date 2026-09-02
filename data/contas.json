@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "nome": "Cavalo",
+        "senha": "560c82d670dc0604b80495ae0185c144e09e64068e93e182746a507a02c89d0ec91ab826667afcb97eb2d0e95bd13b7ddee6c600a07666431543648a83b439f4",
+        "nivel": 1,
+        "xp": 0,
+        "moedas": 100
+    }
+]

@@ -12,7 +12,3 @@ export function input(pergunta) {
         });
     });
 }
-
-export function endInput() {
-    rl.close()
-}

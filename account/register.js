@@ -1,10 +1,12 @@
 import { input } from "../console/input.js";
-import { endInput } from "../console/input.js";
 import fs from "fs";
 import crypto from "crypto";
 
+function esperar(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-function registrarNoJSON(nome, senha) {
+async function registrarNoJSON(nome, senha) {
     const senhaHash = crypto.scryptSync(
         senha,
         "questforge-salt",
@@ -14,20 +16,31 @@ function registrarNoJSON(nome, senha) {
     const contas = JSON.parse(
         fs.readFileSync("./data/contas.json", "utf8")
     );
-   
-    contas.push({
+
+    console.log("Registrando conta.")
+
+    const novaConta = {
         id: contas.length + 1,
         nome: nome,
         senha: senhaHash,
         nivel: 1,
         xp: 0,
         moedas: 100
-    });
+    };
+
+    contas.push(novaConta);
 
     fs.writeFileSync(
         "./data/contas.json",
         JSON.stringify(contas, null, 4)
     );
+
+    
+    await esperar(1000)
+
+    console.log("Conta registrada")
+    
+    return novaConta
 }
 
 export async function registrarUmaConta() {
@@ -72,10 +85,7 @@ export async function registrarUmaConta() {
             const verificaONome = await input(`Você confirma esse nome: ${nome}\nR: `)
 
             if (verificaONome.substring(0,1) == "s" || verificaONome.substring(0,1) == "S") {
-                registrarNoJSON(nome, senha)
-
-                console.log('Conta registrada!')
-                endInput()
+                return await registrarNoJSON(nome, senha)
             } else if (verificaONome.substring(0,1) == "n" || verificaONome.substring(0,1) == "N"){
                 nome = await input("Digite seu novo nome de usuário:\nR: ")
             }

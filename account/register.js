@@ -14,7 +14,7 @@ async function registrarNoJSON(nome, senha) {
     ).toString("hex");
 
     const contas = JSON.parse(
-        fs.readFileSync("./data/contas.json", "utf8")
+        fs.readFileSync("./data/accounts.json", "utf8")
     );
 
     console.log("Registrando conta.")
@@ -31,7 +31,7 @@ async function registrarNoJSON(nome, senha) {
     contas.push(novaConta);
 
     fs.writeFileSync(
-        "./data/contas.json",
+        "./data/accounts.json",
         JSON.stringify(contas, null, 4)
     );
 

@@ -1,4 +1,6 @@
-import { input } from "../console/input.js";
+import { input } from "./input.js";
+import { animacao } from "./console-animation.js"
+import { minigame } from "../services/minigame.js";
 
 export function criarMenu(contaAtual) {
     console.clear();
@@ -28,36 +30,56 @@ export function criarMenu(contaAtual) {
     return true
 }
 
+import { pegarMissoes } from "../script.js"
+import { verificarMissao } from "../script.js"
+
 export async function interagirComMenu() {
     const opcao = await input("\nEscolha uma opção:\nR: ");
 
     switch (opcao) {
         case "1":
-            console.log("Abrindo missões...");
-            break;
+        await animacao("Abrindo missões");
+        console.log("Todas as missões:")
+        console.log("")
+        console.table(pegarMissoes()[0])   
+        console.log("")
+        console.log("Missão disponível:")
+        let missoesDisponiveis = pegarMissoes()[1]
+        console.table(missoesDisponiveis) 
+        const missao = verificarMissao(await input("\nEscolha uma missão disponível pelo ID:\nR: "), missoesDisponiveis);
+        
+        if (missao) {
+            console.clear();
 
-        case "2":
-            console.log("Abrindo ranking...");
-            break;
+            console.log(`⚔️ ${missao.nome}`);
+            console.log("");
+            console.log("Pressione ENTER para começar.");
 
-        case "3":
-            console.log("Abrindo estatísticas...");
-            break;
+            await input("");
 
-        case "4":
-            console.log("Abrindo histórico...");
-            break;
+            await minigame();
+        }
+        break;
 
-        case "5":
-            console.log("Abrindo perfil...");
-            break;
+    case "2":
+        await animacao("Abrindo ranking");
+        break;
 
-        case "6":
-            console.log("Saindo...");
-            endInput();
-            break;
+    case "3":
+        await animacao("Abrindo estatísticas");
+        break;
 
-        default:
-            console.log("Opção inválida!");
+    case "4":
+        await animacao("Abrindo histórico");
+        break;
+
+    case "5":
+        await animacao("Abrindo perfil");
+        break;
+
+    case "6":
+        await animacao("Saindo");
+        exit();
+        break;
     }
 }

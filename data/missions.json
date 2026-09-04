@@ -1,6 +1,14 @@
 [
     {
         "id": 1,
+        "nome": "Rua perdida",
+        "dificuldade": "extremamente facil",
+        "xp": 50,
+        "moedas": 50,
+        "nivelMinimo": 0
+    },
+    {
+        "id": 2,
         "nome": "Caçador de Goblins",
         "dificuldade": "facil",
         "xp": 150,
@@ -8,7 +16,7 @@
         "nivelMinimo": 5
     },
     {
-        "id": 2,
+        "id": 3,
         "nome": "Templo Perdido",
         "dificuldade": "media",
         "xp": 350,
@@ -16,7 +24,7 @@
         "nivelMinimo": 10
     },
     {
-        "id": 3,
+        "id": 4,
         "nome": "Dragão Ancestral",
         "dificuldade": "dificil",
         "xp": 1000,
@@ -24,7 +32,7 @@
         "nivelMinimo": 20
     },
     {
-        "id": 4,
+        "id": 5,
         "nome": "Torre do Caos",
         "dificuldade": "extrema",
         "xp": 2500,

@@ -23,7 +23,7 @@ export async function logarNaConta() {
         }
 
         const contas = JSON.parse(
-            fs.readFileSync("./data/contas.json", "utf8")
+            fs.readFileSync("./data/accounts.json", "utf8")
         );
 
         const conta = contas.find(conta => conta.nome === nome);

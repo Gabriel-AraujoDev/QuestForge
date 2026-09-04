@@ -13,7 +13,7 @@ import { interagirComMenu } from "./console/menu.js"
 let contaAtual = []
 
 function contasJSON() {
-    const dados = fs.readFileSync("./data/contas.json", "utf8");
+    const dados = fs.readFileSync("./data/accounts.json", "utf8");
 
     // para n dar erro ele so vai retornar uma tabela vazia
     const contas = dados.trim() === ""
@@ -41,4 +41,26 @@ if (contasJSON().length === 0) {
 
 if (criarMenu(contaAtual)) {
     interagirComMenu()
+}
+
+const missoes = JSON.parse(
+    fs.readFileSync("./data/missions.json", "utf8")
+);
+
+export function pegarMissoes() {
+    const misssoesQueDaoParaFazer = missoes.filter(missao => missao.nivelMinimo <= contaAtual.nivel)
+    
+    return [missoes, misssoesQueDaoParaFazer]
+}
+
+export function verificarMissao(id, missoesDisponiveis) {
+    const missao = missoesDisponiveis.find(
+        missao => missao.id === Number(id)
+    );
+
+    if (missao) {
+        return missao;
+    }
+
+    return false;
 }
